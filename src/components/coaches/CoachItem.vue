@@ -1,0 +1,60 @@
+<template>
+  <li>
+    <h3>{{ fullName }}</h3>
+    <h4>${{ rate }}/hour</h4>
+    <section>
+      <span v-for="area in areas" :key="area">{{ area }}</span>
+    </section>
+    <section class="actions">
+      <router-link :to="coachContactLink">Contact Coach</router-link>
+      <router-link :to="coachDetailsLink">View Details</router-link>
+    </section>
+  </li>
+</template>
+
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+
+@Options({
+  props: ["id", "firstName", "lastName", "rate", "areas"],
+  computed: {
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
+    coachContactLink() {
+      return `${this.$route.path}/${this.id}/contact`;
+    },
+    coachDetailsLink() {
+      return `${this.$route.path}/${this.id}`;
+    },
+  },
+})
+export default class App extends Vue {}
+</script>
+
+<style scoped>
+li {
+  margin: 1rem 0;
+  border: 1px solid #424242;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h3,
+h4 {
+  margin: 0.5rem 0;
+}
+
+section {
+  margin: 0.5rem 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+</style>

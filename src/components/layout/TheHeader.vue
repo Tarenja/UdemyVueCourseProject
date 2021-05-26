@@ -17,7 +17,7 @@ import { Options, Vue } from "vue-class-component";
 export default class TheHeader extends Vue {}
 </script>
 
-<style>
+<style scoped>
 header {
   width: 100%;
   height: 5rem;
