@@ -1,5 +1,7 @@
+import Coach from '@/interfaces/Coach';
+
 export default {
-  registerCoach(state: any, payload: any) {
+  registerCoach(state: any, payload: Coach) {
     state.coaches.push(payload);
   }
 };
