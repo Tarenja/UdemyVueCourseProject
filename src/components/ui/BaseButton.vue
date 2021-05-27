@@ -25,7 +25,7 @@ import { Options, Vue } from "vue-class-component";
     },
   },
 })
-export default class App extends Vue {}
+export default class BaseButton extends Vue {}
 </script>
 
 <style scoped>

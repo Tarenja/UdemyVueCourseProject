@@ -15,7 +15,7 @@ import { Options, Vue } from "vue-class-component";
     },
   },
 })
-export default class App extends Vue {}
+export default class BaseBadge extends Vue {}
 </script>
 
 <style scoped>
