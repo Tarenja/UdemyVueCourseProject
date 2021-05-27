@@ -66,12 +66,12 @@
       <p>
         <input
           type="checkbox"
-          id="Career"
-          value="Career"
+          id="career"
+          value="career"
           v-model="areas.val"
           @blur="clearValidity('areas')"
         />
-        <label for="Career">Career Advice</label>
+        <label for="career">Career Advice</label>
       </p>
       <p v-if="!areas.isValid">At least one expertise must be selected</p>
     </fieldset>
