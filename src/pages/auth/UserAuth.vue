@@ -83,6 +83,8 @@ import { Options, Vue } from "vue-class-component";
         } else {
           await this.$store.dispatch("signup", actionPayload);
         }
+        const redirectUrl = "/" + (this.$route.query.redirect || "coaches");
+        this.$router.replace(redirectUrl);
       } catch (error) {
         this.error = error.message || "Failed to authenticate, try again later";
       }
